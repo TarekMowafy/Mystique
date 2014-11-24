@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/popup_layout_howtoplay"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="25dp"
+        android:background="#fff" >
+
+        <ImageView
+            android:id="@+id/imgbtn_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="40dp"
+            android:src="@drawable/imgbtn_left" />
+
+        <ImageView
+            android:id="@+id/imgbtn_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="40dp"
+            android:src="@drawable/imgbtn_right" />
+
+        <ImageSwitcher
+            android:id="@+id/imageSwitcher1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toLeftOf="@+id/imgbtn_right"
+            android:layout_toRightOf="@+id/imgbtn_left" >
+
+        </ImageSwitcher>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/close_popup"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/close_popup" />
+
+</RelativeLayout>

@@ -147,7 +147,6 @@ public class CalculateScore extends Activity {
 	@Override
 	protected void onResume() {
 		// TODO Auto-generated method stub
-	
 		getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		super.onResume();
 	}
