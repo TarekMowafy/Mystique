@@ -5,6 +5,7 @@ import java.util.Locale;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +17,7 @@ public class MainActivity extends Activity{
 	String languageToLoad;
 	TextView title;
 	TextView desc;
+	public static final String PREFS_NAME = "MyPrefsFile";
 	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,12 @@ public class MainActivity extends Activity{
 			    Configuration config = new Configuration();
 			    config.locale = locale;
 			    getResources().updateConfiguration(config,null);
+			    SharedPreferences lang = getSharedPreferences(PREFS_NAME, 0);
+			    SharedPreferences.Editor editor = lang.edit();
+			    editor.putString("language", "ar");
+
+			      // Commit the edits!
+			    editor.commit();
 			    
 				
 				Intent intent = new Intent(MainActivity.this, Players.class);
@@ -61,6 +69,12 @@ public class MainActivity extends Activity{
 			    Configuration config = new Configuration();
 			    config.locale = locale;
 			    getResources().updateConfiguration(config,null);
+			    SharedPreferences lang = getSharedPreferences(PREFS_NAME, 0);
+			    SharedPreferences.Editor editor = lang.edit();
+			    editor.putString("language", "en");
+
+			      // Commit the edits!
+			    editor.commit();
 				
 				Intent intent = new Intent(MainActivity.this, Players.class);
 //				intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -80,6 +94,13 @@ public class MainActivity extends Activity{
 					    Configuration config = new Configuration();
 					    config.locale = locale;
 					    getResources().updateConfiguration(config,null);
+					    
+					    SharedPreferences lang = getSharedPreferences(PREFS_NAME, 0);
+					    SharedPreferences.Editor editor = lang.edit();
+					    editor.putString("language", "fr");
+
+					      // Commit the edits!
+					    editor.commit();
 						
 						Intent intent = new Intent(MainActivity.this, Players.class);
 		//				intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
