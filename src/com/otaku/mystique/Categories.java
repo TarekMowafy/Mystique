@@ -197,7 +197,6 @@ public class Categories extends Activity {
 						
 						break;
 					case 2:
-						
 							// TODO Auto-generated method stub
 							LayoutInflater inflater = (LayoutInflater) Categories.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 							View layout = inflater.inflate(R.layout.settings_popup,(ViewGroup) findViewById(R.id.popup_layout));
