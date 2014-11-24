@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ميستيك</string>
+    <string name="hello_world">هيللو ورلد !</string>
+    <string name="action_settings">اعدادات</string>
+	<string name="english">English</string>
+	<string name="arabic">عربي</string>
+	<string name="franco">Franco</string>
+	<string name="play">العب</string>
+	<string name="challenge">مواجهة</string>
+	<string name="howtoplay">ازاي تلعب</string>
+	<string name="teams">فرق</string>
+	<string name="rounds">جولات</string>
+	<string name="time_of_round">وقت الجوله</string>
+	<string name="proceed">كمل</string>
+	<string name="startGame">ابداء اللعب</string>
+	<string name="purchase">اشتري</string>
+	
+	<string name="correct">صح</string>
+    <string name="pass">عديها</string>
+	
+	<string name="btn_back_txt">ارجع</string>
+	<string name="btn_play_txt">العب</string>
+	<string name="the_score">النتيجه</string>
+	<string name="btn_watch_video">اتفرج علي الفيديو</string>
+	 <string name="share">شير</string>
+	
+	<string name="place_on_forehead">حط الموبيل علي راسك</string>
+    <string name="touch_to_start">او دوس علي الشاشه علشان تلعب</string>
+    
+    <string name="extra_time">وقت اضافي</string>
+    <string name="sound_effects">مؤثرات صوتيه</string>
+    <string name="save">حفظ</string>
+    
+    <string name="final_score">النتيجة</string>
+    
+    
+    <!-- Menu Items  -->
+    <string name="home">الرئيسيه</string>
+    <string name="all">الكل</string>
+    <string name="adjust">ضبط</string>
+    <string name="favorite">المفضله</string>
+    <string name="settings">اعدادات</string>
+
+    
+    
+    
+	
+	
+	<string name="sport">رياضه</string>
+	<string name="places">اماكن</string>
+	<string name="nationalities">جنسيات</string>
+	<string name="countries">بلاد</string>
+	<string name="animals">حيوانات</string>
+	<string name="arabic_movies">افلام عربي</string>
+	<string name="jobs">مهن</string>
+	<string name="tv_series">مسلسلات</string>
+	<string name="celeberities">مشاهير</string>
+	<string name="english_movies">افلام انجليزي</string>
+	<string name="singers">مطربين</string>
+	<string name="act_it">تمثيل</string>
+	<string name="cartoon">كارتون</string>
+	<string name="feelings">مشاعر</string>
+	<string name="objects">اشياء</string>
+	
+	
+	<string-array name="sport">
+        <item>رياضه</item>
+        <item>حاول تخمين اسم الرياضه من خلال الوصف, لجعل الأمر أكثر صعوبة لا تستخدم أي أسماء الحرف.</item>
+        <item>Football,Basketball,Baseball,Hockey,Handball,Karate,Kongfu,Swimming,Volleyball,Bowling,Tennis,Pingpong,Waterpolo,Boxing,Taekwondo,Muay Thai,Judo,Diving,Gymnastics,Bodybuilding,Horse Back Riding</item>
+        <item>free</item>
+    </string-array>
+    <string-array name="places">
+        <item>اماكن</item>
+        <item>حاول تخمين اسم الرياضه من خلال الوصف, لجعل الأمر أكثر صعوبة لا تستخدم أي أسماء الحرف.</item>
+        <item>one,two,three</item>
+        <item>purchase</item>
+    </string-array>
+    <string-array name="nationalities">
+        <item>جنسيات</item>
+        <item>حاول تخمين اسم الرياضه من خلال الوصف, لجعل الأمر أكثر صعوبة لا تستخدم أي أسماء الحرف.</item>
+        <item>one,two,three</item>
+        <item>purchase</item>
+    </string-array>
+    <string-array name="countries">
+        <item>بلاد</item>
+        <item>حاول تخمين اسم الرياضه من خلال الوصف, لجعل الأمر أكثر صعوبة لا تستخدم أي أسماء الحرف.</item>
+        <item>Football,Basketball,Baseball,Hockey,Handball,Karate,Kongfu,Swimming,Volleyball,Bowling,Tennis,Pingpong,Waterpolo,Boxing,Taekwondo,Muay Thai,Judo,Diving,Gymnastics,Bodybuilding,Horse Back Riding</item>
+        <item>free</item>
+    </string-array>
+    <string-array name="animals">
+        <item>حيوانات</item>
+        <item>حاول تخمين اسم الرياضه من خلال الوصف, لجعل الأمر أكثر صعوبة لا تستخدم أي أسماء الحرف.</item>
+        <item>Football,Basketball,Baseball,Hockey,Handball,Karate,Kongfu,Swimming,Volleyball,Bowling,Tennis,Pingpong,Waterpolo,Boxing,Taekwondo,Muay Thai,Judo,Diving,Gymnastics,Bodybuilding,Horse Back Riding</item>
+        <item>free</item>
+    </string-array>
+    <string-array name="arabic_movies">
+        <item>افلام عربي</item>
+        <item>حاول تخمين اسم الرياضه من خلال الوصف, لجعل الأمر أكثر صعوبة لا تستخدم أي أسماء الحرف.</item>
+        <item>Football,Basketball,Baseball,Hockey,Handball,Karate,Kongfu,Swimming,Volleyball,Bowling,Tennis,Pingpong,Waterpolo,Boxing,Taekwondo,Muay Thai,Judo,Diving,Gymnastics,Bodybuilding,Horse Back Riding</item>
+        <item>free</item>
+    </string-array>
+    <string-array name="jobs">
+        <item>مهن</item>
+        <item>حاول تخمين اسم الرياضه من خلال الوصف, لجعل الأمر أكثر صعوبة لا تستخدم أي أسماء الحرف.</item>
+        <item>Football,Basketball,Baseball,Hockey,Handball,Karate,Kongfu,Swimming,Volleyball,Bowling,Tennis,Pingpong,Waterpolo,Boxing,Taekwondo,Muay Thai,Judo,Diving,Gymnastics,Bodybuilding,Horse Back Riding</item>
+        <item>purchase</item>
+    </string-array>
+    <string-array name="tv_series">
+        <item>مسلسلات</item>
+        <item>حاول تخمين اسم الرياضه من خلال الوصف, لجعل الأمر أكثر صعوبة لا تستخدم أي أسماء الحرف.</item>
+        <item>Football,Basketball,Baseball,Hockey,Handball,Karate,Kongfu,Swimming,Volleyball,Bowling,Tennis,Pingpong,Waterpolo,Boxing,Taekwondo,Muay Thai,Judo,Diving,Gymnastics,Bodybuilding,Horse Back Riding</item>
+        <item>free</item>
+    </string-array>
+    <string-array name="celeberities">
+        <item>مشاهير</item>
+        <item>حاول تخمين اسم الرياضه من خلال الوصف, لجعل الأمر أكثر صعوبة لا تستخدم أي أسماء الحرف.</item>
+        <item>Football,Basketball,Baseball,Hockey,Handball,Karate,Kongfu,Swimming,Volleyball,Bowling,Tennis,Pingpong,Waterpolo,Boxing,Taekwondo,Muay Thai,Judo,Diving,Gymnastics,Bodybuilding,Horse Back Riding</item>
+        <item>purchase</item>
+    </string-array>
+    <string-array name="english_movies">
+        <item>افلام انجليزي</item>
+        <item>حاول تخمين اسم الرياضه من خلال الوصف, لجعل الأمر أكثر صعوبة لا تستخدم أي أسماء الحرف.</item>
+        <item>Football,Basketball,Baseball,Hockey,Handball,Karate,Kongfu,Swimming,Volleyball,Bowling,Tennis,Pingpong,Waterpolo,Boxing,Taekwondo,Muay Thai,Judo,Diving,Gymnastics,Bodybuilding,Horse Back Riding</item>
+        <item>free</item>
+    </string-array>
+    <string-array name="singers">
+        <item>مطربين</item>
+        <item>حاول تخمين اسم الرياضه من خلال الوصف, لجعل الأمر أكثر صعوبة لا تستخدم أي أسماء الحرف.</item>
+        <item>Football,Basketball,Baseball,Hockey,Handball,Karate,Kongfu,Swimming,Volleyball,Bowling,Tennis,Pingpong,Waterpolo,Boxing,Taekwondo,Muay Thai,Judo,Diving,Gymnastics,Bodybuilding,Horse Back Riding</item>
+        <item>free</item>
+    </string-array>
+    <string-array name="act_it">
+        <item>تمثيل</item>
+        <item>حاول تخمين اسم الرياضه من خلال الوصف, لجعل الأمر أكثر صعوبة لا تستخدم أي أسماء الحرف.</item>
+        <item>Football,Basketball,Baseball,Hockey,Handball,Karate,Kongfu,Swimming,Volleyball,Bowling,Tennis,Pingpong,Waterpolo,Boxing,Taekwondo,Muay Thai,Judo,Diving,Gymnastics,Bodybuilding,Horse Back Riding</item>
+        <item>purchase</item>
+    </string-array>
+    <string-array name="cartoon">
+        <item>كارتون</item>
+        <item>حاول تخمين اسم الرياضه من خلال الوصف, لجعل الأمر أكثر صعوبة لا تستخدم أي أسماء الحرف.</item>
+        <item>Football,Basketball,Baseball,Hockey,Handball,Karate,Kongfu,Swimming,Volleyball,Bowling,Tennis,Pingpong,Waterpolo,Boxing,Taekwondo,Muay Thai,Judo,Diving,Gymnastics,Bodybuilding,Horse Back Riding</item>
+        <item>free</item>
+    </string-array>
+    <string-array name="feelings">
+        <item>مشاعر</item>
+        <item>حاول تخمين اسم الرياضه من خلال الوصف, لجعل الأمر أكثر صعوبة لا تستخدم أي أسماء الحرف.</item>
+        <item>Football,Basketball,Baseball,Hockey,Handball,Karate,Kongfu,Swimming,Volleyball,Bowling,Tennis,Pingpong,Waterpolo,Boxing,Taekwondo,Muay Thai,Judo,Diving,Gymnastics,Bodybuilding,Horse Back Riding</item>
+        <item>free</item>
+    </string-array>
+    <string-array name="objects">
+        <item>اشياء</item>
+        <item>حاول تخمين اسم الرياضه من خلال الوصف, لجعل الأمر أكثر صعوبة لا تستخدم أي أسماء الحرف.</item>
+        <item>Football,Basketball,Baseball,Hockey,Handball,Karate,Kongfu,Swimming,Volleyball,Bowling,Tennis,Pingpong,Waterpolo,Boxing,Taekwondo,Muay Thai,Judo,Diving,Gymnastics,Bodybuilding,Horse Back Riding</item>
+        <item>purchase</item>
+    </string-array>
+    <string-array name="food">
+        <item>اكلات</item>
+        <item>حاول تخمين اسم الرياضه من خلال الوصف, لجعل الأمر أكثر صعوبة لا تستخدم أي أسماء الحرف.</item>
+        <item>Football,Basketball,Baseball,Hockey,Handball,Karate,Kongfu,Swimming,Volleyball,Bowling,Tennis,Pingpong,Waterpolo,Boxing,Taekwondo,Muay Thai,Judo,Diving,Gymnastics,Bodybuilding,Horse Back Riding</item>
+        <item>purchase</item>
+    </string-array>
+</resources>

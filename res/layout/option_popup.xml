@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/popup_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="25dp"
+        android:background="#fff" >
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="118dp"
+            android:layout_marginTop="34dp" >
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="20dp"
+                    android:gravity="right"
+                    android:text="@string/teams"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupTeams"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/radiobutton1"
+                        android:layout_width="50dp"
+                        android:layout_height="35dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/custom_radio"
+                        android:button="@null"
+                        android:checked="true"
+                        android:gravity="center"
+                        android:text="2"
+                        android:textColor="@drawable/custom_radio_txt_color" />
+
+                    <RadioButton
+                        android:id="@+id/radiobutton2"
+                        android:layout_width="50dp"
+                        android:layout_height="35dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/custom_radio"
+                        android:button="@null"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:text="3"
+                        android:textColor="@drawable/custom_radio_txt_color" />
+
+                    <RadioButton
+                        android:id="@+id/radiobutton3"
+                        android:layout_width="50dp"
+                        android:layout_height="35dp"
+                        android:background="@drawable/custom_radio"
+                        android:button="@null"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:text="4"
+                        android:textColor="@drawable/custom_radio_txt_color" />
+                </RadioGroup>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp" >
+
+                <TextView
+                    android:id="@+id/TextView01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="20dp"
+                    android:gravity="right"
+                    android:text="@string/rounds"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupRounds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/radiobutton4"
+                        android:layout_width="50dp"
+                        android:layout_height="35dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/custom_radio"
+                        android:button="@null"
+                        android:checked="true"
+                        android:gravity="center"
+                        android:text="3"
+                        android:textColor="@drawable/custom_radio_txt_color" />
+
+                    <RadioButton
+                        android:id="@+id/radiobutton5"
+                        android:layout_width="50dp"
+                        android:layout_height="35dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/custom_radio"
+                        android:button="@null"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:text="5"
+                        android:textColor="@drawable/custom_radio_txt_color" />
+
+                    <RadioButton
+                        android:id="@+id/radiobutton6"
+                        android:layout_width="50dp"
+                        android:layout_height="35dp"
+                        android:background="@drawable/custom_radio"
+                        android:button="@null"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:text="7"
+                        android:textColor="@drawable/custom_radio_txt_color" />
+                </RadioGroup>
+                
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/TextView02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="20dp"
+                    android:gravity="right"
+                    android:text="@string/time_of_round"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupTimeOfRound"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/radiobutton7"
+                        android:layout_width="50dp"
+                        android:layout_height="35dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/custom_radio"
+                        android:button="@null"
+                        android:checked="true"
+                        android:gravity="center"
+                        android:text="60"
+                        android:textColor="@drawable/custom_radio_txt_color" />
+
+                    <RadioButton
+                        android:id="@+id/radiobutton8"
+                        android:layout_width="50dp"
+                        android:layout_height="35dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/custom_radio"
+                        android:button="@null"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:text="90"
+                        android:textColor="@drawable/custom_radio_txt_color" />
+
+                    <RadioButton
+                        android:id="@+id/radiobutton9"
+                        android:layout_width="50dp"
+                        android:layout_height="35dp"
+                        android:background="@drawable/custom_radio"
+                        android:button="@null"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:text="120"
+                        android:textColor="@drawable/custom_radio_txt_color" />
+                </RadioGroup>
+                
+            </TableRow>
+
+            <Button
+                android:id="@+id/kaml_btn"
+                android:layout_width="fill_parent"
+                android:layout_marginTop="30dp"
+                android:background="#2cacab"
+                android:text="@string/proceed"
+                android:textColor="#fff"
+                android:textStyle="bold" />
+        </TableLayout>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/close_popup"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/close_popup" />
+
+</RelativeLayout>

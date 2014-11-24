@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Mystique</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="english">English</string>
+    <string name="arabic">عربي</string>
+    <string name="franco">Franco</string>
+    <string name="play">EL3AB</string>
+    <string name="challenge">MOWAGHA</string>
+    <string name="howtoplay">EZAY TEL3AB</string>
+    <string name="teams">Fera2</string>
+    <string name="rounds">Gawlat</string>
+    <string name="time_of_round">Wa2t el gawla</string>
+    <string name="proceed">KAML</string>
+    <string name="startGame">EBDA2 EL LE3B</string>
+    <string name="purchase">ESHTERY</string>
+    <string name="correct">SA7</string>
+    <string name="pass">3ADDEEHA</string>
+    <string name="btn_back_txt">ERGA3</string>
+    <string name="btn_play_txt">EL3AB</string>
+    <string name="the_score">ELNATEEGA</string>
+    <string name="btn_watch_video">ETFARRAG 3AL VIDEO</string>
+    <string name="share">Share</string>
+    <string name="place_on_forehead">7OT EL MOBILE 3ALA RASAK</string>
+    <string name="touch_to_start">AW ELMES EL SHASHA W EL3AB</string>
+    <string name="extra_time">Wa2t edafy</string>
+    <string name="sound_effects">Mo2atherat Sawteya</string>
+    <string name="save">7efz</string>
+    <string name="final_score">EL NATEEGA</string>
+    
+
+    <!-- Menu Items -->
+    <string name="home">EL RA2ESEYA</string>
+    <string name="all">EL KOLL</string>
+    <string name="adjust">DABT</string>
+    <string name="favorite">EL MOFADDALA</string>
+    <string name="settings">E3DADAT</string>
+
+    
+    
+    
+    <string-array name="sport">
+        <item>REYADA</item>
+        <item>Try to guess the sport name by describing the plot. to make it more difficult don’t use any character names.</item>
+        <item>Football,Basketball,Baseball,Hockey,Handball,Karate,Kongfu,Swimming,Volleyball,Bowling,Tennis,Pingpong,Waterpolo,Boxing,Taekwondo,Muay Thai,Judo,Diving,Gymnastics,Bodybuilding,Horse Back Riding</item>
+        <item>free</item>
+    </string-array>
+    <string-array name="places">
+        <item>AMAKEN</item>
+        <item>Try to guess the place name by describing the plot. to make it more difficult don’t use any character names.</item>
+        <item>one,two,three</item>
+        <item>purchase</item>
+    </string-array>
+    <string-array name="nationalities">
+        <item>GENSEYAT</item>
+        <item>Try to guess the place name by describing the plot. to make it more difficult don’t use any character names.</item>
+        <item>one,two,three</item>
+        <item>purchase</item>
+    </string-array>
+    <string-array name="countries">
+        <item>BELAD</item>
+        <item>Try to guess the sport name by describing the plot. to make it more difficult don’t use any character names.</item>
+        <item>Football,Basketball,Baseball,Hockey,Handball,Karate,Kongfu,Swimming,Volleyball,Bowling,Tennis,Pingpong,Waterpolo,Boxing,Taekwondo,Muay Thai,Judo,Diving,Gymnastics,Bodybuilding,Horse Back Riding</item>
+        <item>free</item>
+    </string-array>
+    <string-array name="animals">
+        <item>7AYAWANAT</item>
+        <item>Try to guess the sport name by describing the plot. to make it more difficult don’t use any character names.</item>
+        <item>Football,Basketball,Baseball,Hockey,Handball,Karate,Kongfu,Swimming,Volleyball,Bowling,Tennis,Pingpong,Waterpolo,Boxing,Taekwondo,Muay Thai,Judo,Diving,Gymnastics,Bodybuilding,Horse Back Riding</item>
+        <item>free</item>
+    </string-array>
+    <string-array name="arabic_movies">
+        <item>AFLAM 3ARABY</item>
+        <item>Try to guess the sport name by describing the plot. to make it more difficult don’t use any character names.</item>
+        <item>Football,Basketball,Baseball,Hockey,Handball,Karate,Kongfu,Swimming,Volleyball,Bowling,Tennis,Pingpong,Waterpolo,Boxing,Taekwondo,Muay Thai,Judo,Diving,Gymnastics,Bodybuilding,Horse Back Riding</item>
+        <item>free</item>
+    </string-array>
+    <string-array name="jobs">
+        <item>MEHAN</item>
+        <item>Try to guess the sport name by describing the plot. to make it more difficult don’t use any character names.</item>
+        <item>Football,Basketball,Baseball,Hockey,Handball,Karate,Kongfu,Swimming,Volleyball,Bowling,Tennis,Pingpong,Waterpolo,Boxing,Taekwondo,Muay Thai,Judo,Diving,Gymnastics,Bodybuilding,Horse Back Riding</item>
+        <item>free</item>
+    </string-array>
+    <string-array name="tv_series">
+        <item>MOSALSALAT</item>
+        <item>Try to guess the sport name by describing the plot. to make it more difficult don’t use any character names.</item>
+        <item>Football,Basketball,Baseball,Hockey,Handball,Karate,Kongfu,Swimming,Volleyball,Bowling,Tennis,Pingpong,Waterpolo,Boxing,Taekwondo,Muay Thai,Judo,Diving,Gymnastics,Bodybuilding,Horse Back Riding</item>
+        <item>free</item>
+    </string-array>
+    <string-array name="celeberities">
+        <item>MASHAHEER</item>
+        <item>Try to guess the sport name by describing the plot. to make it more difficult don’t use any character names.</item>
+        <item>Football,Basketball,Baseball,Hockey,Handball,Karate,Kongfu,Swimming,Volleyball,Bowling,Tennis,Pingpong,Waterpolo,Boxing,Taekwondo,Muay Thai,Judo,Diving,Gymnastics,Bodybuilding,Horse Back Riding</item>
+        <item>purchase</item>
+    </string-array>
+    <string-array name="english_movies">
+        <item>AFLAM ENGLEZY</item>
+        <item>Try to guess the sport name by describing the plot. to make it more difficult don’t use any character names.</item>
+        <item>Football,Basketball,Baseball,Hockey,Handball,Karate,Kongfu,Swimming,Volleyball,Bowling,Tennis,Pingpong,Waterpolo,Boxing,Taekwondo,Muay Thai,Judo,Diving,Gymnastics,Bodybuilding,Horse Back Riding</item>
+        <item>free</item>
+    </string-array>
+    <string-array name="singers">
+        <item>MOTREBEEN</item>
+        <item>Try to guess the sport name by describing the plot. to make it more difficult don’t use any character names.</item>
+        <item>Football,Basketball,Baseball,Hockey,Handball,Karate,Kongfu,Swimming,Volleyball,Bowling,Tennis,Pingpong,Waterpolo,Boxing,Taekwondo,Muay Thai,Judo,Diving,Gymnastics,Bodybuilding,Horse Back Riding</item>
+        <item>free</item>
+    </string-array>
+    <string-array name="act_it">
+        <item>TAMSEEL</item>
+        <item>Try to guess the sport name by describing the plot. to make it more difficult don’t use any character names.</item>
+        <item>Football,Basketball,Baseball,Hockey,Handball,Karate,Kongfu,Swimming,Volleyball,Bowling,Tennis,Pingpong,Waterpolo,Boxing,Taekwondo,Muay Thai,Judo,Diving,Gymnastics,Bodybuilding,Horse Back Riding</item>
+        <item>purchase</item>
+    </string-array>
+    <string-array name="cartoon">
+        <item>CARTOON</item>
+        <item>Try to guess the sport name by describing the plot. to make it more difficult don’t use any character names.</item>
+        <item>Football,Basketball,Baseball,Hockey,Handball,Karate,Kongfu,Swimming,Volleyball,Bowling,Tennis,Pingpong,Waterpolo,Boxing,Taekwondo,Muay Thai,Judo,Diving,Gymnastics,Bodybuilding,Horse Back Riding</item>
+        <item>free</item>
+    </string-array>
+    <string-array name="feelings">
+        <item>MASHA3ER</item>
+        <item>Try to guess the sport name by describing the plot. to make it more difficult don’t use any character names.</item>
+        <item>Football,Basketball,Baseball,Hockey,Handball,Karate,Kongfu,Swimming,Volleyball,Bowling,Tennis,Pingpong,Waterpolo,Boxing,Taekwondo,Muay Thai,Judo,Diving,Gymnastics,Bodybuilding,Horse Back Riding</item>
+        <item>free</item>
+    </string-array>
+    <string-array name="objects">
+        <item>2ASHYA2</item>
+        <item>Try to guess the sport name by describing the plot. to make it more difficult don’t use any character names.</item>
+        <item>Football,Basketball,Baseball,Hockey,Handball,Karate,Kongfu,Swimming,Volleyball,Bowling,Tennis,Pingpong,Waterpolo,Boxing,Taekwondo,Muay Thai,Judo,Diving,Gymnastics,Bodybuilding,Horse Back Riding</item>
+        <item>purchase</item>
+    </string-array>
+
+    <string-array name="food">
+        <item>AKLAAT</item>
+        <item>Try to guess the sport name by describing the plot. to make it more difficult don’t use any character names.</item>
+        <item>Football,Basketball,Baseball,Hockey,Handball,Karate,Kongfu,Swimming,Volleyball,Bowling,Tennis,Pingpong,Waterpolo,Boxing,Taekwondo,Muay Thai,Judo,Diving,Gymnastics,Bodybuilding,Horse Back Riding</item>
+        <item>purchase</item>
+    </string-array>
+   
+
+</resources>
