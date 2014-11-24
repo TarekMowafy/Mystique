@@ -4,6 +4,7 @@ package com.otaku.mystique;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Locale;
 
 import mp.MpUtils;
 import mp.PaymentRequest;
@@ -13,6 +14,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -34,8 +36,9 @@ import android.widget.TextView;
 
 public class Categories extends Activity {
 	
-		SharedPreferences pref; 
+		SharedPreferences lang; 
 		SharedPreferences.Editor editor ;
+		public static final String PREFS_NAME = "MyPrefsFile";
 	
 		 ArrayList<NavDrawerItem> dataList;
 		 GridView grid;
@@ -48,6 +51,8 @@ public class Categories extends Activity {
 	     
 	     CategoryDataObj ClickedObj;
 	     
+	     String language = " ";
+	     
 	     private static String SERVICE_ID = "9023be583d1320ef78ec22083700f51e";
 	 	 private static String APP_SECRET = "a922538f3551a8f8756c418959e97237";
 
@@ -58,7 +63,11 @@ public class Categories extends Activity {
 		setContentView(R.layout.categories);
 		
 		
-
+		lang = getSharedPreferences(PREFS_NAME, 0);
+		language = lang.getString("language", "fr");
+		
+		
+		
 		getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		
 		Intent intent = getIntent();
@@ -67,7 +76,6 @@ public class Categories extends Activity {
 			challengeGame = (ChallengeGameObj) intent.getSerializableExtra("challengeGame");
 		}
 			
-		
 		
 
 		
@@ -122,7 +130,6 @@ public class Categories extends Activity {
 			CategoryDataArray.add(catDataObj);
 		}
 		
-		pref = this.getSharedPreferences("MyPref", MODE_PRIVATE); 
 		/* Categories View */
 		CustomGrid gridadapter = new CustomGrid(Categories.this, CategoryDataArray);
 		
@@ -227,12 +234,6 @@ public class Categories extends Activity {
 					case 4:
 	
 						break;
-					case 6:
-						
-						break;
-					case 7:
-						
-						break;
 					}
 					
 				}
@@ -242,6 +243,8 @@ public class Categories extends Activity {
 		// TODO Auto-generated method stub
 		LayoutInflater inflater = (LayoutInflater) Categories.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		View layout = inflater.inflate(R.layout.category_popup,(ViewGroup) findViewById(R.id.popup_category));
+		
+		
 		
 		getWindowManager().getDefaultDisplay().getMetrics(metrics);
 		
@@ -287,6 +290,14 @@ public class Categories extends Activity {
 	                builder.setType(MpUtils.PRODUCT_TYPE_NON_CONSUMABLE);        // non-consumable items can be later restored
 	                builder.setIcon(clickedObj.thumblocation);
 	                PaymentRequest pr = builder.build();
+	                
+	                if(language.equals("fr")){
+	                	Locale locale = new Locale("en"); 
+					    Locale.setDefault(locale);
+					    Configuration config = new Configuration();
+					    config.locale = locale;
+					    getResources().updateConfiguration(config,null);
+	                }
 	                makePayment(pr);
 
 				}
@@ -318,6 +329,13 @@ public class Categories extends Activity {
 	
 	
 	public void startTheGame(CategoryDataObj clickedObj) {
+		if( language.equals("fr")){
+        	Locale locale = new Locale(language); 
+		    Locale.setDefault(locale);
+		    Configuration config = new Configuration();
+		    config.locale = locale;
+		    getResources().updateConfiguration(config,null);
+        }
 		Intent intent= new Intent(Categories.this,StartGame.class);
 		intent.putExtra("clickedObj", clickedObj);
 		
@@ -352,9 +370,8 @@ public class Categories extends Activity {
 				
 				switch (response.getBillingStatus()) {
 					case MpUtils.MESSAGE_STATUS_BILLED:
-						editor = pref.edit();
-						editor.putBoolean(response.getProductName(), true);
-						editor.commit();
+						
+						
 						startTheGame(ClickedObj);
 						
 					break;
