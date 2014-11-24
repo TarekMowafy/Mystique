@@ -234,12 +234,6 @@ public class Categories extends Activity {
 					case 4:
 	
 						break;
-					case 6:
-						
-						break;
-					case 7:
-						
-						break;
 					}
 					
 				}
@@ -249,6 +243,8 @@ public class Categories extends Activity {
 		// TODO Auto-generated method stub
 		LayoutInflater inflater = (LayoutInflater) Categories.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		View layout = inflater.inflate(R.layout.category_popup,(ViewGroup) findViewById(R.id.popup_category));
+		
+		
 		
 		getWindowManager().getDefaultDisplay().getMetrics(metrics);
 		

@@ -211,7 +211,7 @@ public class Players extends ActionBarActivity {
 	    if (pwindo != null && pwindo.isShowing()) {
 	        pwindo.dismiss();
 	    } 
-	    if (howtoplayWindow != null && howtoplayWindow.isShowing()) {
+	    else if (howtoplayWindow != null && howtoplayWindow.isShowing()) {
 	        howtoplayWindow.dismiss();
 	    }else {
 	        super.onBackPressed();
