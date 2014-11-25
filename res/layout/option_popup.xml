@@ -138,65 +138,6 @@
                 
             </TableRow>
 
-            <TableRow
-                android:id="@+id/tableRow3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    android:id="@+id/TextView02"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginRight="20dp"
-                    android:gravity="right"
-                    android:text="@string/time_of_round"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
-
-                <RadioGroup
-                    android:id="@+id/radioGroupTimeOfRound"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal" >
-
-                    <RadioButton
-                        android:id="@+id/radiobutton7"
-                        android:layout_width="50dp"
-                        android:layout_height="35dp"
-                        android:layout_marginRight="10dp"
-                        android:background="@drawable/custom_radio"
-                        android:button="@null"
-                        android:checked="true"
-                        android:gravity="center"
-                        android:text="60"
-                        android:textColor="@drawable/custom_radio_txt_color" />
-
-                    <RadioButton
-                        android:id="@+id/radiobutton8"
-                        android:layout_width="50dp"
-                        android:layout_height="35dp"
-                        android:layout_marginRight="10dp"
-                        android:background="@drawable/custom_radio"
-                        android:button="@null"
-                        android:checked="false"
-                        android:gravity="center"
-                        android:text="90"
-                        android:textColor="@drawable/custom_radio_txt_color" />
-
-                    <RadioButton
-                        android:id="@+id/radiobutton9"
-                        android:layout_width="50dp"
-                        android:layout_height="35dp"
-                        android:background="@drawable/custom_radio"
-                        android:button="@null"
-                        android:checked="false"
-                        android:gravity="center"
-                        android:text="120"
-                        android:textColor="@drawable/custom_radio_txt_color" />
-                </RadioGroup>
-                
-            </TableRow>
-
             <Button
                 android:id="@+id/kaml_btn"
                 android:layout_width="fill_parent"

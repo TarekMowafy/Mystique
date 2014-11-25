@@ -34,15 +34,6 @@
 
         </RelativeLayout>
 
-        <ImageView
-            android:id="@+id/imgbtn_right"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="7dp"
-            android:src="@drawable/btn_play" />
-
        <RelativeLayout
             android:id="@+id/relativeLayout_play"
             android:layout_width="wrap_content"
@@ -67,6 +58,16 @@
                 android:src="@drawable/btn_play" />
 
         </RelativeLayout>
+
+       <TextView
+           android:id="@+id/tv_score"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_centerHorizontal="true"
+           android:layout_centerVertical="true"
+           android:textColor="#fff"
+           android:text="@string/the_score"
+           android:textAppearance="?android:attr/textAppearanceLarge" />
 
     </RelativeLayout>
 

@@ -28,15 +28,18 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.PopupWindow;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class Categories extends Activity {
 	
-		SharedPreferences lang; 
+		SharedPreferences lang, settings; 
 		SharedPreferences.Editor editor ;
 		public static final String PREFS_NAME = "MyPrefsFile";
 	
@@ -199,7 +202,7 @@ public class Categories extends Activity {
 					case 2:
 							// TODO Auto-generated method stub
 							LayoutInflater inflater = (LayoutInflater) Categories.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-							View layout = inflater.inflate(R.layout.settings_popup,(ViewGroup) findViewById(R.id.popup_layout));
+							final View layout = inflater.inflate(R.layout.settings_popup,(ViewGroup) findViewById(R.id.popup_layout));
 							
 							DisplayMetrics metrics = new DisplayMetrics();
 							getWindowManager().getDefaultDisplay().getMetrics(metrics);
@@ -211,6 +214,65 @@ public class Categories extends Activity {
 							pwindo.setAnimationStyle(R.style.PopupWindowAnimation);
 							pwindo.showAtLocation(layout, Gravity.CENTER_VERTICAL, 0,0);
 							
+							settings = getSharedPreferences(PREFS_NAME, 0);
+							
+							CheckBox CB_extraTime = (CheckBox) layout.findViewById(R.id.CB_extraTime);
+							
+							CB_extraTime.setChecked(settings.getBoolean("extraTime", false));
+							
+							CheckBox CB_soundEffects = (CheckBox) layout.findViewById(R.id.CB_soundEffects);
+							CB_soundEffects.setChecked(settings.getBoolean("soundEffects", false));
+							
+							RadioButton RB_sixty = (RadioButton) layout.findViewById(R.id.rb_sixty);
+							RadioButton RB_ninty = (RadioButton) layout.findViewById(R.id.rb_ninty);
+							RadioButton RB_oneTwenty = (RadioButton) layout.findViewById(R.id.rb_oneTwenty);
+
+							
+							switch (settings.getInt("roundDuration", 60)) {
+							case 60:
+								RB_sixty.setChecked(true);
+								
+								break;
+							case 90:
+								RB_ninty.setChecked(true);
+								
+								break;
+							case 120:
+								RB_oneTwenty.setChecked(true);
+								
+								break;
+
+							default:
+								break;
+							}
+
+							
+							Button continue_btn = (Button) layout.findViewById(R.id.continue_btn);
+							
+							continue_btn.setOnClickListener(new View.OnClickListener() {
+								
+								@Override
+								public void onClick(View v) {
+									// TODO Auto-generated method stub
+									RadioGroup RG_timeOfRound = (RadioGroup) layout.findViewById(R.id.radioGroupTimeOfRound);
+									RadioButton RB_timeOfRound = (RadioButton) layout.findViewById(RG_timeOfRound.getCheckedRadioButtonId());
+									
+									CheckBox CB_extraTime = (CheckBox) layout.findViewById(R.id.CB_extraTime);
+									CheckBox CB_soundEffects = (CheckBox) layout.findViewById(R.id.CB_soundEffects);
+									
+									 boolean extraTime = CB_extraTime.isChecked();
+									 boolean soundEffects = CB_soundEffects.isChecked();
+									 int roundDuration = Integer.parseInt(String.valueOf(RB_timeOfRound.getText()));
+									settings = getSharedPreferences(PREFS_NAME, 0);
+									editor = settings.edit();
+									editor.putBoolean("extraTime", extraTime);
+									editor.putBoolean("soundEffects", soundEffects);
+									editor.putInt("roundDuration", roundDuration);
+									editor.commit();
+									pwindo.dismiss();
+									
+								}
+							});
 							
 							
 							
