@@ -12,8 +12,8 @@
 *.class
 
 # Generated files
-#bin/
-#gen/
+bin/
+gen/
 
 # Gradle files
 .gradle/
@@ -28,3 +28,4 @@ proguard/
 # Log Files
 *.log
 
+.gitignore~
