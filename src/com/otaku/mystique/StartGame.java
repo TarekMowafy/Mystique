@@ -268,7 +268,7 @@ public class StartGame extends Activity implements SensorEventListener, SurfaceH
 			public void onFinish() {
 				// TODO Auto-generated method stub
 				if(extraTime){
-					new CountDownTimer((CORRECT_ANSWERS_COUNT * 5)*1000,1000) {
+					new CountDownTimer((CORRECT_ANSWERS_COUNT * 3)*1000,1000) {
 						@Override
 						public void onTick(long millisUntilFinished) {
 							// TODO Auto-generated method stub
