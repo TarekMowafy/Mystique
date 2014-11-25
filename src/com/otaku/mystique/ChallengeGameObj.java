@@ -10,15 +10,15 @@ public class ChallengeGameObj implements Serializable {
 	
 	//private TeamObj[] teams ;
 	private RoundObj[][] rounds;
-	private int roundDuration;
+//	private int roundDuration;
 	private int currentRound = 0;
 	private int currentTeam = 0;
 	private CategoryDataObj category;
 	
-	public ChallengeGameObj(int noOfTeams, int noOfRounds, int roundDuration) {
+	public ChallengeGameObj(int noOfTeams, int noOfRounds) {
 		//teams = new TeamObj[noOfTeams];
 		rounds = new RoundObj[noOfTeams][noOfRounds];
-		this.roundDuration = roundDuration;
+//		this.roundDuration = roundDuration;
 	} 
 	public int getNoOfTeams()
 	{
@@ -53,10 +53,10 @@ public class ChallengeGameObj implements Serializable {
 		for(int i = 0; i < rounds.length; i++)
 			rounds[i][currentRound] = new RoundObj(currentRound, category);
 	}
-	public int getRoundDuration(){
-		
-		return roundDuration*1000;
-	}
+//	public int getRoundDuration(){
+//		
+//		return roundDuration*1000;
+//	}
 	public int getCurrentTeam(){
 		return currentTeam + 1;
 	}

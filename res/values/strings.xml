@@ -20,7 +20,7 @@
     <string name="pass">Pass</string>
     <string name="btn_back_txt">BACK</string>
     <string name="btn_play_txt">PLAY</string>
-    <string name="the_score">Score</string>
+    <string name="the_score">The Score</string>
     <string name="btn_watch_video">WATCH THE VIDEO</string>
     <string name="share">Share</string>
     <string name="place_on_forehead">PLACE THE MOBILE ON YOUR FOREHEAD</string>
@@ -28,7 +28,7 @@
     <string name="extra_time">Extra Time</string>
     <string name="sound_effects">Sound Effects</string>
     <string name="save">Save</string>
-    <string name="final_score">Score</string>
+    <string name="final_score">Final Score</string>
     
 
     <!-- Menu Items -->

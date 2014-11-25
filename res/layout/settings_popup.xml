@@ -36,11 +36,10 @@
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
                     <CheckBox
-                        android:id="@+id/checkBox1"
-                        android:layout_marginRight="10dp"
+                        android:id="@+id/CB_extraTime"
+                        android:layout_marginLeft="100dp"
                         android:background="@drawable/custom_checkbox"
                         android:button="@null"
-                        android:checked="true"
                         android:gravity="center" />
                
             </TableRow>
@@ -49,7 +48,7 @@
                 android:id="@+id/tableRow2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp" >
+                android:layout_marginBottom="25dp" >
 
                 <TextView
                     android:id="@+id/TextView01"
@@ -62,8 +61,8 @@
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
                     <CheckBox
-                        android:id="@+id/checkBox2"
-                        android:layout_marginRight="10dp"
+                        android:id="@+id/CB_soundEffects"
+                        android:layout_marginLeft="100dp"
                         android:background="@drawable/custom_checkbox"
                         android:button="@null"
                         android:checked="false"
@@ -71,8 +70,65 @@
                 
             </TableRow>
 
+            <TableRow
+                android:id="@+id/tableRow3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/TextView02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="40dp"
+                    android:gravity="right"
+                    android:text="@string/time_of_round"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupTimeOfRound"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/rb_sixty"
+                        android:layout_width="50dp"
+                        android:layout_height="35dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/custom_radio"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="60"
+                        android:textColor="@drawable/custom_radio_txt_color" />
+
+                    <RadioButton
+                        android:id="@+id/rb_ninty"
+                        android:layout_width="50dp"
+                        android:layout_height="35dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/custom_radio"
+                        android:button="@null"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:text="90"
+                        android:textColor="@drawable/custom_radio_txt_color" />
+
+                    <RadioButton
+                        android:id="@+id/rb_oneTwenty"
+                        android:layout_width="50dp"
+                        android:layout_height="35dp"
+                        android:background="@drawable/custom_radio"
+                        android:button="@null"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:text="120"
+                        android:textColor="@drawable/custom_radio_txt_color" />
+                </RadioGroup>
+            </TableRow>
+
             <Button
-                android:id="@+id/kaml_btn"
+                android:id="@+id/continue_btn"
                 android:layout_width="fill_parent"
                 android:layout_marginTop="30dp"
                 android:background="#2cacab"

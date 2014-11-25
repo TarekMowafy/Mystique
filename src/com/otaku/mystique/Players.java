@@ -96,16 +96,16 @@ public class Players extends ActionBarActivity {
 				// TODO Auto-generated method stub
 				RadioGroup RG_teams = (RadioGroup) layout.findViewById(R.id.radioGroupTeams);
 				RadioGroup RG_rounds = (RadioGroup) layout.findViewById(R.id.radioGroupRounds);
-				RadioGroup RG_timeOfRound = (RadioGroup) layout.findViewById(R.id.radioGroupTimeOfRound);
+//				RadioGroup RG_timeOfRound = (RadioGroup) layout.findViewById(R.id.radioGroupTimeOfRound);
 				
 				RadioButton RB_teams = (RadioButton) layout.findViewById(RG_teams.getCheckedRadioButtonId());
 				RadioButton RB_rounds = (RadioButton) layout.findViewById(RG_rounds.getCheckedRadioButtonId());
-				RadioButton RB_timeOfRound = (RadioButton) layout.findViewById(RG_timeOfRound.getCheckedRadioButtonId());
+//				RadioButton RB_timeOfRound = (RadioButton) layout.findViewById(RG_timeOfRound.getCheckedRadioButtonId());
 
 				int teams = Integer.parseInt(String.valueOf(RB_teams.getText()));
 				int rounds = Integer.parseInt(String.valueOf(RB_rounds.getText()));
-				int timeofrounds = Integer.parseInt(String.valueOf(RB_timeOfRound.getText()));
-				ChallengeGameObj challengeGame = new ChallengeGameObj(teams, rounds, timeofrounds);
+//				int timeofrounds = Integer.parseInt(String.valueOf(RB_timeOfRound.getText()));
+				ChallengeGameObj challengeGame = new ChallengeGameObj(teams, rounds);
 				
 				Intent intent = new Intent(Players.this, Categories.class);
 				intent.putExtra("challengeGame", challengeGame);

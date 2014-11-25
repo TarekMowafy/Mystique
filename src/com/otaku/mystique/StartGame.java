@@ -12,6 +12,8 @@ import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.hardware.Camera;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -38,9 +40,18 @@ public class StartGame extends Activity implements SensorEventListener, SurfaceH
 	
 	TextView textViewTime ,displayedWord ,touchToStart;
 	RelativeLayout background;
-	CounterClass timer ;
+	
+	CountDownTimer timerStart;
 	
 	Boolean startGame = false;
+	
+	int CORRECT_ANSWERS_COUNT = 0;
+	int EXTRA_TIME = 5000;
+	
+	int roundDuration;
+	boolean extraTime = false;
+	boolean soundEffects  = false;
+	
 	String word;
 	Boolean inGame = false;
 	Boolean timerRunning = false;
@@ -56,15 +67,16 @@ public class StartGame extends Activity implements SensorEventListener, SurfaceH
     public String rec= null;
     
     ChallengeGameObj challengeGame;
+    
+    SharedPreferences settings; 
+    public static final String PREFS_NAME = "MyPrefsFile";
 	
 	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_start_game);
-		
-		
-		
+
 		layoutBack = (RelativeLayout) findViewById(R.id.relativeLayout_back);
 		layoutBack.setOnClickListener(new View.OnClickListener() {
 			
@@ -74,8 +86,6 @@ public class StartGame extends Activity implements SensorEventListener, SurfaceH
 				finish();
 			}
 		});
-
-
 		getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		
@@ -84,43 +94,37 @@ public class StartGame extends Activity implements SensorEventListener, SurfaceH
         mSurfaceHolder.addCallback(this);
         mSurfaceHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
 		
-		
 		Intent intent = getIntent();
 		intent.getExtras();
 		
 		CategoryDataObj clickedObj;
 		
+		settings = getSharedPreferences(PREFS_NAME, 0);
+		extraTime = settings.getBoolean("extraTime", false);
+		soundEffects = settings.getBoolean("soundEffects", false);
+		
+		roundDuration = settings.getInt("roundDuration", 60)*1000;
 		
 		textViewTime= (TextView) findViewById(R.id.textViewtime);
 		if(intent.hasExtra("challengeGame")){
 		
 			challengeGame = (ChallengeGameObj) intent.getSerializableExtra("challengeGame");
-			timer = new CounterClass(challengeGame.getRoundDuration()+2000, 1000);
 			textViewTime.setText("Team " + challengeGame.getCurrentTeam()+" Round "+challengeGame.getCurrentRound());
 			clickedObj = challengeGame.getCurrentCategory();
 			
 		}else{
-		
-			timer = new CounterClass(60000+2000,1000); // this is 60 seconds + 2 seconds buffer for the camera to start
 			clickedObj = (CategoryDataObj) intent.getSerializableExtra("clickedObj");
 		}
-		
 		
 		gameContent = Arrays.asList(clickedObj.dataObj.split(","));
 		Collections.shuffle(gameContent);
 
-		
-		
-		
 		displayedWord = (TextView) findViewById(R.id.txt_place_on_forehead);
-//		touchToStart = (TextView) findViewById(R.id.txt_touch_to_start);
-		
 		background = (RelativeLayout) findViewById(R.id.background_game);
 
 		sensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
         sensorAccelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         
-		
 	}
 	
 	@Override
@@ -152,8 +156,7 @@ public class StartGame extends Activity implements SensorEventListener, SurfaceH
 					new CountDownTimer(3000, 1000) {
 						@Override
 						public void onTick(long millisUntilFinished) {
-							displayedWord.setText(" " + (millisUntilFinished / 1000  ) ); 
-//							touchToStart.setText("");
+							displayedWord.setText("" + (millisUntilFinished / 1000  ) ); 
 						}
 						@Override
 						public void onFinish() {
@@ -166,8 +169,7 @@ public class StartGame extends Activity implements SensorEventListener, SurfaceH
 							intent = new Intent(StartGame.this, RecorderService.class);
 	     	                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 	     	                startService(intent);
-							
-							timer.start();
+	     	                createTimer();
 						}
 					}.start();
 				}else{
@@ -181,6 +183,7 @@ public class StartGame extends Activity implements SensorEventListener, SurfaceH
 		// Correct answer
 		if(valueRoll < -7){
 			if(inGame){
+				CORRECT_ANSWERS_COUNT++;
 				itemResult.put(word, true);
 				new CountDownTimer(1000,1000) {
 					@Override
@@ -219,6 +222,7 @@ public class StartGame extends Activity implements SensorEventListener, SurfaceH
 					}
 				}.start();
 				startGame = false;
+				
 			}
 		}	
 	}
@@ -231,8 +235,9 @@ public class StartGame extends Activity implements SensorEventListener, SurfaceH
 	public String getRandString(List<String> gameContent) {
 		String randomStr;
 		if(itemIndex == gameContent.size()){
-			randomStr = "All Displayed";
-			timer.onFinish();
+			itemIndex = 0;
+			randomStr = gameContent.get(itemIndex);
+			itemIndex++;
 			
 		}else{
 			randomStr = gameContent.get(itemIndex);
@@ -240,44 +245,84 @@ public class StartGame extends Activity implements SensorEventListener, SurfaceH
 		}
 		return randomStr;
 	}
-	
-	public class CounterClass extends CountDownTimer { 
-		public CounterClass(long millisInFuture, long countDownInterval) { 
-			super(millisInFuture, countDownInterval); 
-			} 
-		@Override 
-		public void onFinish() { 
+
+	public void createTimer()
+	{	
+		timerStart = new CountDownTimer((roundDuration)+2000 , 1000) {
 			
-			itemIndex = 0;
-			textViewTime.setText("Completed."); 
-			stopService(new Intent(StartGame.this, RecorderService.class));
-			String videoPath = RecorderService.videoPath;
-            rec="Stopped";
-            onDestroy();
-            Intent intent = new Intent(StartGame.this, CalculateScore.class);
-            intent.putExtra("itemResult", itemResult);
-            intent.putExtra("videoPath", videoPath);
-            if(challengeGame != null){
-            	intent.putExtra("challengeGame", challengeGame);
-            }
-            startActivity(intent);
-            finish();
-		} 
-		
-		@Override
-		public void onTick(long millisUntilFinished) { 
-			timerRunning = true;
-			long millis = millisUntilFinished; 
-			String ms = String.format("%02d:%02d",
-					TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished) 
-					- TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millisUntilFinished)),
- 
-					TimeUnit.MILLISECONDS.toSeconds(millis) -
-					TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis))); 
+			@Override
+			public void onTick(long millisUntilFinished) {
+				// TODO Auto-generated method stub
+				timerRunning = true;
+				String ms = String.format("%02d:%02d",
+						TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished) 
+						- TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millisUntilFinished)),
+	 
+						TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) -
+						TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished))); 
+				
+				textViewTime.setText(ms); 	
+			}
 			
-			textViewTime.setText(ms); 
-			} 
-		}
+			@Override
+			public void onFinish() {
+				// TODO Auto-generated method stub
+				if(extraTime){
+					new CountDownTimer((CORRECT_ANSWERS_COUNT * 5)*1000,1000) {
+						@Override
+						public void onTick(long millisUntilFinished) {
+							// TODO Auto-generated method stub
+							timerRunning = true;
+							String ms = String.format("%02d:%02d",
+									TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished) 
+									- TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millisUntilFinished)),
+				 
+									TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) -
+									TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished))); 
+							
+							textViewTime.setText("Extra Time \n"+ms);
+							textViewTime.setTextColor(Color.RED);
+						}
+						@Override
+						public void onFinish() {
+							// TODO Auto-generated method stub
+							itemIndex = 0;
+							CORRECT_ANSWERS_COUNT = 0;
+							textViewTime.setText("Completed."); 
+							stopService(new Intent(StartGame.this, RecorderService.class));
+							String videoPath = RecorderService.videoPath;
+				            rec="Stopped";
+				            onDestroy();
+				            Intent intent = new Intent(StartGame.this, CalculateScore.class);
+				            intent.putExtra("itemResult", itemResult);
+				            intent.putExtra("videoPath", videoPath);
+				            if(challengeGame != null){
+				            	intent.putExtra("challengeGame", challengeGame);
+				            }
+				            startActivity(intent);
+				            finish();
+						}
+					}.start();
+				}else{
+					itemIndex = 0;
+					textViewTime.setText("Completed."); 
+					stopService(new Intent(StartGame.this, RecorderService.class));
+					String videoPath = RecorderService.videoPath;
+		            rec="Stopped";
+		            onDestroy();
+		            Intent intent = new Intent(StartGame.this, CalculateScore.class);
+		            intent.putExtra("itemResult", itemResult);
+		            intent.putExtra("videoPath", videoPath);
+		            if(challengeGame != null){
+		            	intent.putExtra("challengeGame", challengeGame);
+		            }
+		            startActivity(intent);
+		            finish();
+				}
+				
+			}
+		}.start();
+	}
 
 	@Override
 	public void surfaceCreated(SurfaceHolder holder) {
